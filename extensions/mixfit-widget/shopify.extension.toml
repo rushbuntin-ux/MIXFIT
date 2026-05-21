@@ -1,0 +1,7 @@
+api_version = "2026-04"
+uid = "f276a0dd-be95-d7f0-071b-49d8af281625f3d293bd"
+
+[[extensions]]
+name = "MIXFIT Fit Widget"
+handle = "mixfit-widget"
+type = "theme"

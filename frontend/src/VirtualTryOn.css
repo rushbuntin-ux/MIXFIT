@@ -1,0 +1,171 @@
+.tryon-wrap {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.tryon-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  align-self: flex-start;
+}
+
+.tryon-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.tryon-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 2px dashed #444;
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-height: 110px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tryon-slot:hover {
+  border-color: #888;
+}
+
+.tryon-slot input {
+  display: none;
+}
+
+.slot-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.slot-hint {
+  font-size: 0.72rem;
+  color: #666;
+  text-align: center;
+}
+
+.slot-preview {
+  width: 100%;
+  height: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.garment-desc-input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.garment-desc-input:focus {
+  border-color: #666;
+}
+
+.garment-desc-input::placeholder {
+  color: #555;
+}
+
+.garment-desc-input option {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.garment-desc-input:disabled {
+  opacity: 0.5;
+}
+
+.generate-btn {
+  width: 100%;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 10px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.generate-btn:hover:not(:disabled) {
+  background: #333;
+  border-color: #888;
+}
+
+.generate-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #555;
+  border-top-color: #ccc;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tryon-error {
+  color: #e05252;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+}
+
+.tryon-canvas {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.tryon-canvas.hidden {
+  display: none;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid #444;
+  color: #888;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.reset-btn:hover {
+  border-color: #999;
+  color: #ccc;
+}

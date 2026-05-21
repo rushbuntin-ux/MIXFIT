@@ -1,0 +1,93 @@
+{%- liquid
+  assign mf = product.metafields.mixfit
+  assign chest    = mf.chest_in.value    | default: block.settings.chest_in
+  assign waist    = mf.waist_in.value    | default: block.settings.waist_in
+  assign hip      = mf.hip_in.value      | default: block.settings.hip_in
+  assign shoulder = mf.shoulder_in.value | default: block.settings.shoulder_in
+  assign sleeve   = mf.sleeve_in.value   | default: block.settings.sleeve_in
+  assign neck     = mf.neck_in.value     | default: block.settings.neck_in
+  assign inseam   = mf.inseam_in.value   | default: block.settings.inseam_in
+  assign thigh    = mf.thigh_in.value    | default: block.settings.thigh_in
+  assign size_lbl = mf.size_label.value  | default: block.settings.size_label
+-%}
+
+<div
+  class="mixfit-widget"
+  data-chest="{{ chest }}"
+  data-waist="{{ waist }}"
+  data-hip="{{ hip }}"
+  data-shoulder="{{ shoulder }}"
+  data-sleeve="{{ sleeve }}"
+  data-neck="{{ neck }}"
+  data-inseam="{{ inseam }}"
+  data-thigh="{{ thigh }}"
+  data-size-label="{{ size_lbl }}"
+  data-product="{{ product.title | escape }}"
+  data-api-url="{{ block.settings.api_url }}"
+  {{ block.shopify_attributes }}
+></div>
+
+{{ 'mixfit-widget.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'mixfit-widget.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "MIXFIT Fit Widget",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_url",
+      "label": "MIXFIT API URL",
+      "placeholder": "https://your-backend.com",
+      "info": "Your deployed MIXFIT backend URL"
+    },
+    {
+      "type": "text",
+      "id": "size_label",
+      "label": "Size Label",
+      "info": "Garment size (e.g. M, L, XL) — overridden by mixfit.size_label metafield"
+    },
+    {
+      "type": "number",
+      "id": "chest_in",
+      "label": "Chest (in)"
+    },
+    {
+      "type": "number",
+      "id": "waist_in",
+      "label": "Waist (in)"
+    },
+    {
+      "type": "number",
+      "id": "hip_in",
+      "label": "Hip (in)"
+    },
+    {
+      "type": "number",
+      "id": "shoulder_in",
+      "label": "Shoulder (in)"
+    },
+    {
+      "type": "number",
+      "id": "sleeve_in",
+      "label": "Sleeve (in)"
+    },
+    {
+      "type": "number",
+      "id": "neck_in",
+      "label": "Neck (in)"
+    },
+    {
+      "type": "number",
+      "id": "inseam_in",
+      "label": "Inseam (in)"
+    },
+    {
+      "type": "number",
+      "id": "thigh_in",
+      "label": "Thigh (in)"
+    }
+  ]
+}
+{% endschema %}

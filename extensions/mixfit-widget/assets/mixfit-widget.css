@@ -1,0 +1,158 @@
+.mixfit-widget {
+  margin: 16px 0;
+  font-family: inherit;
+}
+
+/* ── Panel shell ──────────────────────────────────────────────────────────── */
+.mf-panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mf-toggle {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.mf-toggle:hover { background: #333; }
+
+.mf-body { padding: 20px 16px 16px; }
+
+/* ── Steps ────────────────────────────────────────────────────────────────── */
+.mf-step { display: flex; flex-direction: column; gap: 14px; }
+
+/* ── Shared field row ─────────────────────────────────────────────────────── */
+.mf-field { display: flex; align-items: center; gap: 10px; }
+.mf-field label { min-width: 72px; font-size: 14px; color: #374151; }
+.mf-field input,
+.mf-field select {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+}
+.mf-field input:focus,
+.mf-field select:focus { outline: 2px solid #111; outline-offset: 1px; }
+
+/* ── Step 1: Height + inline unit toggle ──────────────────────────────────── */
+.mf-height-row { display: flex; flex: 1; gap: 6px; align-items: center; }
+.mf-height-row input { flex: 1; }
+.mf-inline-units { display: flex; gap: 2px; }
+.mf-u-btn {
+  padding: 5px 9px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 12px;
+}
+.mf-u-btn.active { background: #111; color: #fff; border-color: #111; }
+
+/* ── Step 1: Camera vs Manual options ─────────────────────────────────────── */
+.mf-options { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+
+.mf-camera-cta {
+  width: 100%;
+  padding: 11px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.mf-camera-cta:hover { background: #333; }
+
+.mf-manual-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+  text-decoration: underline;
+  padding: 0;
+}
+.mf-manual-link:hover { color: #111; }
+
+/* ── Step 2: Photo upload row ─────────────────────────────────────────────── */
+.mf-photo-row { display: flex; flex-direction: column; gap: 6px; }
+
+.mf-upload-label {
+  display: block;
+  padding: 9px 12px;
+  border: 1px dashed #9ca3af;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  text-align: center;
+}
+.mf-upload-label:hover { border-color: #111; color: #111; }
+.mf-upload-label input[type="file"] { display: none; }
+
+.mf-cam-status { font-size: 12px; margin: 0; }
+.mf-cam-ok { color: #22c55e; }
+
+/* ── Step 2: Measurement form ─────────────────────────────────────────────── */
+.mf-form { display: flex; flex-direction: column; gap: 10px; }
+
+.mf-submit {
+  margin-top: 4px;
+  padding: 11px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.mf-submit:hover { background: #333; }
+
+/* ── Step 3: Result ───────────────────────────────────────────────────────── */
+.mf-rec { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+.mf-rec-size { font-size: 32px; font-weight: 700; color: #111; }
+.mf-rec-conf { font-size: 14px; color: #6b7280; }
+
+.mf-zones { display: flex; flex-direction: column; gap: 7px; }
+.mf-zone  { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.mf-dot   { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.mf-zone-name   { flex: 1; text-transform: capitalize; color: #374151; }
+.mf-zone-status { font-weight: 600; }
+.mf-zone-delta  { min-width: 36px; text-align: right; font-size: 12px; color: #9ca3af; }
+
+.mf-notes { margin-top: 12px; font-size: 13px; color: #6b7280; font-style: italic; }
+
+.mf-back {
+  display: inline-block;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #6b7280;
+  padding: 0;
+  text-decoration: underline;
+}
+.mf-back:hover { color: #111; }
+
+/* ── States ───────────────────────────────────────────────────────────────── */
+.mf-loading { color: #6b7280; font-size: 14px; }
+.mf-error   { color: #ef4444; font-size: 14px; }
+.mf-warn    { color: #f59e0b; font-size: 13px; }

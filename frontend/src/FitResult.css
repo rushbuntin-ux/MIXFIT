@@ -1,0 +1,105 @@
+.fit-result {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f7f2 0%, #f9fafb 100%);
+  border-radius: 14px;
+  border: 1.5px solid #d1e8d9;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.size-badge {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.result-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.confidence-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.3rem 0.75rem;
+  background: #4a7c59;
+  color: #fff;
+  border-radius: 99px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.confidence-tag.warn {
+  background: #d97706;
+}
+
+.result-notes {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+}
+
+.zones-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  margin-bottom: 0.6rem;
+}
+
+.zones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.zone-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 80px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.zone-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.zone-bar-wrap {
+  height: 7px;
+  background: #e5e7eb;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.zone-bar {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.zone-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
