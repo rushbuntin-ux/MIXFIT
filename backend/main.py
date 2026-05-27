@@ -109,9 +109,12 @@ async def measure_photo(
     height_in: float = Form(...),
     unit: str = Form("in"),
 ):
-    import mediapipe as mp
-    from PIL import Image
-    import numpy as np
+    try:
+        import mediapipe as mp
+        from PIL import Image
+        import numpy as np
+    except ImportError:
+        raise HTTPException(status_code=503, detail="Photo measurement not available on this server")
 
     if height_in < 48 or height_in > 96:
         raise HTTPException(status_code=422, detail="height_in must be between 48 and 96 inches")
