@@ -43,6 +43,11 @@ def get_profile(user_id: str):
     return profile
 
 
+@app.post("/recommend/garment", response_model=SizeRecommendation)
+def recommend_garment(req: GarmentFitRequest):
+    return recommend_from_garment(req.profile, req.garment)
+
+
 @app.post("/recommend/{garment_type}", response_model=SizeRecommendation)
 def recommend(garment_type: GarmentType, profile: MeasurementProfile):
     return get_recommendation(profile, garment_type)
@@ -54,11 +59,6 @@ def recommend_saved(garment_type: GarmentType, user_id: str):
     if profile is None:
         raise HTTPException(status_code=404, detail="Profile not found — save measurements first")
     return get_recommendation(profile, garment_type)
-
-
-@app.post("/recommend/garment", response_model=SizeRecommendation)
-def recommend_garment(req: GarmentFitRequest):
-    return recommend_from_garment(req.profile, req.garment)
 
 
 @app.post("/tryon")
