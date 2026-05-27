@@ -9,9 +9,6 @@ from size_engine import get_recommendation, recommend_from_garment
 from database import init_db, upsert_profile, fetch_profile
 from dotenv import load_dotenv
 import replicate
-import mediapipe as mp
-from PIL import Image
-import numpy as np
 
 load_dotenv()
 
@@ -112,6 +109,10 @@ async def measure_photo(
     height_in: float = Form(...),
     unit: str = Form("in"),
 ):
+    import mediapipe as mp
+    from PIL import Image
+    import numpy as np
+
     if height_in < 48 or height_in > 96:
         raise HTTPException(status_code=422, detail="height_in must be between 48 and 96 inches")
 
